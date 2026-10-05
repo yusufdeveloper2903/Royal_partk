@@ -1,0 +1,19 @@
+@use 'sass:map';
+
+// Desktop-first breakpoints. Values are the upper bound of each range.
+$breakpoints: (
+  sm: 575.98px,
+  md: 767.98px,
+  lg: 1023.98px,
+  xl: 1199.98px,
+);
+
+@mixin down($name) {
+  @if not map.has-key($breakpoints, $name) {
+    @error 'Unknown breakpoint `#{$name}`. Available: #{map.keys($breakpoints)}';
+  }
+
+  @media (max-width: map.get($breakpoints, $name)) {
+    @content;
+  }
+}

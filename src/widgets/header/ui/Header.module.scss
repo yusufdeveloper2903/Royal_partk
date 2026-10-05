@@ -1,0 +1,142 @@
+@use '@/shared/styles' as *;
+
+.header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 10;
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  min-height: var(--header-height);
+}
+
+.menu {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  margin-left: var(--space-6);
+
+  @include down(md) {
+    position: absolute;
+    top: 100%;
+    right: var(--container-gutter);
+    left: var(--container-gutter);
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+    padding: var(--space-5);
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-card);
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-0.5rem);
+    transition:
+      opacity var(--transition-base),
+      transform var(--transition-base),
+      visibility var(--transition-base);
+  }
+}
+
+.menuOpen {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+.nav {
+  flex: 1;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(var(--space-2), 2vw, var(--space-6));
+
+  @include down(md) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-1);
+  }
+}
+
+.navLink {
+  display: block;
+  padding: var(--space-2) 0;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-base);
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: transparent;
+
+  @include down(md) {
+    display: inline-flex;
+  }
+}
+
+// Three-line icon drawn with a span + pseudo-elements; morphs into an "X" when open.
+.burgerIcon {
+  position: relative;
+
+  &,
+  &::before,
+  &::after {
+    display: block;
+    width: 1.5rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--color-text);
+    transition:
+      transform var(--transition-base),
+      background-color var(--transition-base);
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  &::before {
+    top: -7px;
+  }
+
+  &::after {
+    top: 7px;
+  }
+}
+
+.burgerIconOpen {
+  background-color: transparent;
+
+  &::before {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  &::after {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}

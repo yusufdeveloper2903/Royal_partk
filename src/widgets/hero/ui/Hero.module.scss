@@ -1,0 +1,51 @@
+@use '@/shared/styles' as *;
+
+.hero {
+  padding-top: calc(var(--header-height) + var(--space-6));
+  padding-bottom: var(--space-8);
+  background: url('@/shared/assets/images/hero/hero-bg.png') right bottom / cover no-repeat;
+
+  @include down(md) {
+    background-position: 70% bottom;
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  max-width: 34rem;
+}
+
+.eyebrow {
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.title {
+  font-size: var(--font-size-display);
+  font-weight: 700;
+}
+
+.accent {
+  color: var(--color-primary);
+}
+
+.text {
+  max-width: 26rem;
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}
+
+.search {
+  max-width: 48rem;
+}

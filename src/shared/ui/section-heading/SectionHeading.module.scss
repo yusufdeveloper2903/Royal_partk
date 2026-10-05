@@ -1,0 +1,29 @@
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.title {
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+}
+
+.description {
+  max-width: 48rem;
+  font-size: var(--font-size-md);
+  color: var(--color-text-muted);
+}

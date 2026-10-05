@@ -1,0 +1,51 @@
+:root {
+  // Colors
+  --color-primary: #1b75bb;
+  --color-primary-hover: #155d95;
+  --color-accent: #0784e4;
+  --color-text: #081f32;
+  --color-text-muted: rgb(8 31 50 / 65%);
+  --color-white: #fff;
+  --color-surface: #fcfcfd;
+  --color-border: #f0f0f0;
+  --color-danger: #d93025;
+  --color-success: #188038;
+
+  // Typography
+  --font-family-base: 'Gelasio', georgia, serif;
+  --font-size-xs: 0.8125rem; // 13
+  --font-size-sm: 0.9375rem; // 15
+  --font-size-base: 1rem; // 16
+  --font-size-md: 1.125rem; // 18
+  --font-size-lg: 1.25rem; // 20
+  --font-size-h4: clamp(1.125rem, 1rem + 0.5vw, 1.4375rem); // 18 → 23
+  --font-size-h3: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); // 24 → 32
+  --font-size-h2: clamp(1.625rem, 1.3rem + 1.2vw, 2.0625rem); // 26 → 33
+  --font-size-display: clamp(2rem, 1.2rem + 3.6vw, 3.5625rem); // 32 → 57
+  --line-height-tight: 1.2;
+  --line-height-base: 1.5;
+
+  // Spacing
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3.75rem;
+  --section-gap: clamp(4rem, 2rem + 8vw, 8.75rem); // 64 → 140
+
+  // Layout
+  --container-max: 71.25rem; // 1140
+  --container-gutter: 1rem;
+  --header-height: 5.5rem;
+
+  // Shape & motion
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-full: 9999px;
+  --shadow-card: 0 4px 30px rgb(199 199 199 / 25%);
+  --shadow-button: 0 6px 16px rgb(27 117 187 / 35%);
+  --transition-base: 0.3s ease;
+}
